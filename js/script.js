@@ -64,6 +64,8 @@ $(".tabs-latest__link").click(function (event) {
 $(document).ready(function () {
   $(".slider-text ").slick({
     adaptiveHeight: true,
+    arrows: false,
+    dots: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 500,
@@ -71,4 +73,21 @@ $(document).ready(function () {
     waitForAnimate: false,
   });
   $(".slider").slick("setPosition");
+});
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 80) {
+    $(".header").addClass("fixed-header");
+    $(".full-main__body").addClass("margin");
+  } else {
+    $(".header").removeClass("fixed-header");
+    $(".full-main__body").removeClass("margin");
+  }
+});
+$(document).ready(function () {
+  $(".header__burger").click(function (event) {
+    $(".header__burger, .header__menu, .header__logo").toggleClass(
+      "active-menu"
+    );
+    $("body").toggleClass("lock");
+  });
 });
