@@ -252,6 +252,10 @@ body.lock {
   min-height: 100vh;
 }
 
+.full-main .header {
+  position: relative;
+}
+
 .full-main .header__body {
   height: 80px;
   display: -webkit-box;
@@ -263,6 +267,7 @@ body.lock {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
 }
 
 .full-main .header__logo {
@@ -272,15 +277,15 @@ body.lock {
   font-weight: 700;
   line-height: 36px;
   position: relative;
-  z-index: 4;
-}
-
-.full-main .header__logo.active-menu {
-  color: #000000;
+  z-index: 25;
 }
 
 .full-main .header__burger {
   display: none;
+}
+
+.full-main .menu-header {
+  position: relative;
 }
 
 .full-main .menu-header__list {
@@ -317,18 +322,9 @@ body.lock {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 15;
   background-color: black;
   margin: 0px 0px;
-}
-
-.full-main .fixed-header:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  z-index: 3;
 }
 
 .full-main__body {
@@ -383,30 +379,6 @@ body.lock {
   padding: 19px 35px;
   cursor: pointer;
   position: relative;
-}
-
-.full-main__link:after {
-  content: "";
-  position: absolute;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-  background: #000;
-  left: 50%;
-  top: 0;
-  width: 0%;
-  height: 100%;
-}
-
-.full-main__link span {
-  position: relative;
-  z-index: 2;
-}
-
-.full-main__link:hover:after {
-  background-color: #000;
-  width: 100%;
-  left: 0;
 }
 
 .title {
@@ -1110,7 +1082,7 @@ body.lock {
   font-size: 14px;
   line-height: 30px;
   text-transform: uppercase;
-  padding: 0px 0px 0px 14px;
+  padding: 0px 0px 0px 28px;
 }
 
 .address__text {
@@ -1118,7 +1090,7 @@ body.lock {
   font-family: "Roboto Slab";
   font-size: 12px;
   line-height: 20px;
-  padding: 0px 0px 0px 14px;
+  padding: 0px 0px 0px 28px;
 }
 
 .form {
@@ -1131,15 +1103,37 @@ body.lock {
 }
 
 .form__name {
+  display: block;
   border: 1px solid #555555;
   -webkit-box-flex: 0;
   -ms-flex: 0 1 350px;
   flex: 0 1 350px;
   margin: 0px 30px 21px 0px;
   height: 44px;
+}
+
+.form__name::-webkit-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__name::-moz-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__name:-ms-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__name::-ms-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__name::placeholder {
+  padding: 0px 0px 0px 15px;
 }
 
 .form__mail {
+  display: block;
   border: 1px solid #555555;
   -webkit-box-flex: 0;
   -ms-flex: 0 1 350px;
@@ -1148,7 +1142,28 @@ body.lock {
   height: 44px;
 }
 
+.form__mail::-webkit-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__mail::-moz-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__mail:-ms-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__mail::-ms-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__mail::placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
 .form__subject {
+  display: block;
   border: 1px solid #555555;
   -webkit-box-flex: 0;
   -ms-flex: 0 1 350px;
@@ -1157,7 +1172,28 @@ body.lock {
   height: 44px;
 }
 
+.form__subject::-webkit-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__subject::-moz-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__subject:-ms-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__subject::-ms-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__subject::placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
 .form__company {
+  display: block;
   border: 1px solid #555555;
   -webkit-box-flex: 0;
   -ms-flex: 0 1 350px;
@@ -1166,13 +1202,55 @@ body.lock {
   height: 44px;
 }
 
+.form__company::-webkit-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__company::-moz-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__company:-ms-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__company::-ms-input-placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
+.form__company::placeholder {
+  padding: 0px 0px 0px 15px;
+}
+
 .form__message {
+  display: block;
   border: 1px solid #555555;
   -webkit-box-flex: 0;
   -ms-flex: 0 1 730px;
   flex: 0 1 730px;
   margin: 0px 0px 21px 0px;
   height: 104px;
+  resize: none;
+}
+
+.form__message::-webkit-input-placeholder {
+  padding: 15px 0px 0px 15px;
+}
+
+.form__message::-moz-placeholder {
+  padding: 15px 0px 0px 15px;
+}
+
+.form__message:-ms-input-placeholder {
+  padding: 15px 0px 0px 15px;
+}
+
+.form__message::-ms-input-placeholder {
+  padding: 15px 0px 0px 15px;
+}
+
+.form__message::placeholder {
+  padding: 15px 0px 0px 15px;
 }
 
 .form__butn {
@@ -1199,39 +1277,29 @@ body.lock {
   background: url("../img/address-mail.svg") left no-repeat;
 }
 
-@media (max-width: 1154px) {
-  .form__name {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    margin: 0px 0px 21px 0px;
+@media (min-width: 991.98px) {
+  .full-main__link:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    background: #000;
+    left: 50%;
+    top: 0;
+    width: 0%;
+    height: 100%;
   }
 
-  .form__mail {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    margin: 0px 0px 21px 0px;
+  .full-main__link span {
+    position: relative;
+    z-index: 2;
   }
 
-  .form__subject {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    margin: 0px 0px 21px 0px;
-  }
-
-  .form__company {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    margin: 0px 0px 21px 0px;
-  }
-
-  .form__message {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
+  .full-main__link:hover:after {
+    background-color: #000;
+    width: 100%;
+    left: 0;
   }
 }
 
@@ -1242,6 +1310,68 @@ body.lock {
 
   .footer {
     padding: 60px 0px;
+  }
+
+  .form__name {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 100%;
+    margin: 0px 0px 21px 0px;
+  }
+
+  .form__mail {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 100%;
+    margin: 0px 0px 21px 0px;
+  }
+
+  .form__subject {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 100%;
+    margin: 0px 0px 21px 0px;
+  }
+
+  .form__company {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 100%;
+    margin: 0px 0px 21px 0px;
+  }
+
+  .form__message {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 100%;
+    margin: 0px 0px 21px 0px;
+  }
+}
+
+@media (max-width: 992px) {
+  .form__name {
+    width: 100%;
+  }
+
+  .form__mail {
+    width: 100%;
+  }
+
+  .form__subject {
+    width: 100%;
+  }
+
+  .form__company {
+    width: 100%;
+  }
+
+  .form__message {
+    width: 100%;
   }
 }
 
@@ -1283,6 +1413,10 @@ body.lock {
   .brands__item {
     margin: 0px 15px 20px 15px;
   }
+
+  .address {
+    margin: 0px 100px 30px 0px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -1295,6 +1429,15 @@ body.lock {
     padding: 45px 0px;
   }
 
+  .full-main .header.active-menu:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    z-index: 4;
+  }
+
   .full-main .header__body {
     height: 50px;
   }
@@ -1304,7 +1447,7 @@ body.lock {
     position: relative;
     width: 30px;
     height: 20px;
-    z-index: 20;
+    z-index: 5;
   }
 
   .full-main .header__burger:before,
@@ -1345,7 +1488,6 @@ body.lock {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     top: 9px;
-    background-color: #000000;
   }
 
   .full-main .header__burger.active-menu:after {
@@ -1353,7 +1495,6 @@ body.lock {
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
     bottom: 9px;
-    background-color: #000000;
   }
 
   .full-main .header__burger.active-menu span {
@@ -1543,10 +1684,6 @@ body.lock {
     font-size: 16px;
   }
 
-  .full-main__link {
-    padding: 15px 25px;
-  }
-
   .services__body {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1618,6 +1755,12 @@ body.lock {
 
   .communication {
     padding: 40px 10px;
+  }
+}
+
+@media (min-width: 991.98px) and (max-width: 479.98px) {
+  .full-main__link {
+    padding: 15px 25px;
   }
 }
 
